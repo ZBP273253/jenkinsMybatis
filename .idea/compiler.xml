@@ -15,11 +15,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatis" target="1.7" />
-      <module name="mybatisController" target="1.7" />
-      <module name="mybatisEntity" target="1.7" />
-      <module name="mybatisMapper" target="1.7" />
-      <module name="mybatisService" target="1.7" />
-      <module name="WebMybatis" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

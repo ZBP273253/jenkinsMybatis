@@ -68,12 +68,18 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+
     <dependency>
       <groupId>javax.servlet.jsp.jstl</groupId>
-      <artifactId>jstl</artifactId>
+      <artifactId>jstl-api</artifactId>
       <version>1.2</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jstl-impl</artifactId>
+      <version>1.2</version>
+    </dependency>
 
     <dependency>
       <groupId>mysql</groupId>
@@ -93,11 +99,9 @@
       <version>0.2.9</version>
     </dependency>
 
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
+
+
+
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
@@ -206,7 +210,38 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.11.0</version>
     </dependency>
+
+
   </dependencies>
+  <repositories>
+    <!--  閰嶇疆nexus杩滅▼浠撳簱 -->
+    <repository>
+      <id>nexus</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://localhost:8081/repository/maven-public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <!-- 配置远程发布到私服，mvn deploy -->
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Nexus Release Repository</name>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
